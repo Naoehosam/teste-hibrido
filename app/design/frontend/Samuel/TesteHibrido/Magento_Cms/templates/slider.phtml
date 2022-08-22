@@ -1,0 +1,16 @@
+<div class="bannerslider-inner">
+    <div class="slide" style="background-image: url('<?php echo $this->getViewFileUrl('images/banner/banner1.png'); ?>')"></div>
+    <div class="slide" style="background-image: url('<?php echo $this->getViewFileUrl('images/banner/banner2.png'); ?>')"></div>
+</div>
+<script>
+    require(['jquery', 'jquery/ui', 'slick'], function($) {
+    $(document).ready(function() {
+            $(".bannerslider-inner").slick({
+                dots: true,
+                infinite: false,
+                slidesToShow: 1,
+                slidesToScroll: 1
+            });
+        });
+    });
+</script>

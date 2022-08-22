@@ -1,0 +1,85 @@
+//
+// Magento UI Media Queries - Breakpoints
+//
+// @screen__s:   640px;
+// @screen__xs:  480px;
+// @screen__m:   768px;
+//  _____________________________________________
+
+
+//
+// Mobile and Desktop (style-m.css) - common
+//
+// Is placed in style-m.css as both desktop and mobile devices
+// have rules within this block "in common"
+//  ---------------------------------------------
+& when (@media-common =true) {
+    #html-body {
+        .page-wrapper {
+            .page-footer {
+                background: @color-gray91;
+                color: @color-black_dark;
+                .footer {
+                    &.content {
+                        padding-top: 0px;
+                        border-top: 0px;
+                        .footer {
+                            &.links {
+                                a {
+                                    color: @color-black_dark;
+                                    text-decoration: underline;
+                                }
+                            }
+                        }
+                        .block {
+                            &.newsletter {
+                                .actions {
+                                    button {
+                                        background-color: @color-black;
+                                        border: 0px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+//
+// Mobile Only (style-m.css)
+//  ---------------------------------------------
+
+// @screen__l:  1024px;
+.media-width(@extremum, @break) when (@extremum ='max') and (@break =@screen__l) {
+    .page-wrapper {}
+}
+
+// @screen__s:   768px;
+.media-width(@extremum, @break) when (@extremum ='max') and (@break =@screen__m) {
+    .page-wrapper {
+        
+    }
+}
+
+// @screen__s:   640px;
+.media-width(@extremum, @break) when (@extremum ='max') and (@break =@screen__s) {
+    .page-wrapper {}
+}
+
+// @screen__xs:  480px;
+.media-width(@extremum, @break) when (@extremum ='max') and (@break =@screen__xs) {
+    .page-wrapper {}
+}
+
+
+//
+// Desktop Only (style-l.css)
+// ---------------------------------------------
+
+// @screen__l:   1024px;
+.media-width(@extremum, @break) when (@extremum ='min') and (@break =@screen__l) {
+    .page-wrapper {}
+}

@@ -1,0 +1,39 @@
+<div class="apelo-comercial">
+    <div class="item">
+        <div class="icon" style="background-image: url('<?php echo $this->getViewFileUrl('images/icons/wallet.png'); ?>')"></div>
+        <h2>Parcele em até 12x</h2>
+        <span>sem juros no cartão</span>
+    </div>
+    <div class="item">
+        <div class="icon" style="background-image: url('<?php echo $this->getViewFileUrl('images/icons/delivery.png'); ?>')"></div>
+        <h2>Direto da fábrica</h2>
+        <span>para seu escritório</span>
+    </div>
+    <div class="item">
+        <div class="icon" style="background-image: url('<?php echo $this->getViewFileUrl('images/icons/credit-cards-payment.png'); ?>')"></div>
+        <h2>Pague com dois cartões</h2>
+        <span>do jeito que você preferir</span>
+    </div>
+    <div class="item">
+        <div class="icon" style="background-image: url('<?php echo $this->getViewFileUrl('images/icons/security.png'); ?>')"></div>
+        <h2>Compra segura</h2>
+        <span>seus dados protegidos</span>
+    </div>
+</div>
+<script>
+    window.onresize = function(event) {
+        if (window.innerWidth < 768) {
+            require(['jquery', 'jquery/ui', 'slick'], function($) {
+            $(document).ready(function() {
+                    $(".apelo-comercial").slick({
+                        dots: false,
+                        arrows: false,
+                        infinite: false,
+                        slidesToShow: 1,
+                        slidesToScroll: 1
+                    });
+                });
+            });
+        }
+    };
+</script>

@@ -1,0 +1,215 @@
+//
+// Magento UI Media Queries - Breakpoints
+//
+// @screen__s:   640px;
+// @screen__xs:  480px;
+// @screen__m:   768px;
+//  _____________________________________________
+
+
+//
+// Mobile and Desktop (style-m.css) - common
+//
+// Is placed in style-m.css as both desktop and mobile devices
+// have rules within this block "in common"
+//  ---------------------------------------------
+& when (@media-common =true) {
+    .page-wrapper {
+        .page-header {
+            .header {
+                &.content {
+                    .lib-vendor-prefix-display(flex);
+                    .lib-vendor-prefix-flex-direction(row);
+                    justify-content: space-between;
+                    align-items: center;
+                    padding-bottom: 10px;
+                    .logo {
+                        order: 1;
+                        margin: 0 0 0px 0;
+                    }
+                    .block-search {
+                        order: 2;
+                        padding: 0px;
+                        width: 500px;
+                        margin: 0 auto;
+                        .control {
+                            padding: 0px;
+                            border: 0px;
+                        }
+                        .action {
+                            &.search {
+                                height: 50px;
+                                right: 20px;
+                            }
+                        }
+                        .form {
+                            &.minisearch {
+                                .control {
+                                    input {
+                                        height: 50px;
+                                        border-radius: 30px;
+                                        padding: 0 25px;
+                                    }
+                                    .nested {
+                                        display: none;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    .minicart-wrapper {
+                        .action {
+                            &.showcart{
+                                &:before {
+                                    content: '';
+                                    height: 30px;
+                                    width: 30px;
+                                    background-position: center;
+                                    background-repeat: no-repeat;
+                                    background-size: contain;
+                                    background-image: url('@{baseDir}images/icons/shopping-cart.png');
+                                }
+                            }
+                        }
+                        order: 3;
+                    }
+                }
+            }
+        }
+        .sections {
+            &.nav-sections {
+                -webkit-box-shadow: 0 3px 5px rgba(57, 63, 72, 0.3);
+                -moz-box-shadow: 0 3px 5px rgba(57, 63, 72, 0.3);
+                box-shadow: 0 3px 5px rgba(57, 63, 72, 0.3);
+                background: @color-white;
+                .navigation {
+                    background: @color-white;
+                    ul {
+                        text-align: center;
+                        li {
+                            a {
+                                span {
+                                    color: @color-black_dark;
+                                    text-transform: uppercase;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+//
+// Mobile Only (style-m.css)
+//  ---------------------------------------------
+
+// @screen__l:  1024px;
+.media-width(@extremum, @break) when (@extremum ='max') and (@break =@screen__l) {
+    .page-wrapper {}
+}
+
+// @screen__s:   768px;
+.media-width(@extremum, @break) when (@extremum ='max') and (@break =@screen__m) {
+    #html-body {
+        .page-wrapper {
+            .page-header {
+                .header {
+                    &.content {
+                        .lib-vendor-prefix-display(flex);
+                        .lib-vendor-prefix-flex-direction(row);
+                        justify-content: end;
+                        align-items: center;
+                        padding-bottom: 10px;
+                        .logo {
+                            order: 1;
+                            margin: 0 80px 0px 0;
+                            img {
+                                height: 50px;
+                                width: 100px;
+                            }
+                        }
+                        .block-search {
+                            margin: 0;
+                            float: right;
+                            height: fit-content;
+                            .lib-vendor-prefix-display(flex);
+                            width: 24%;
+                            position: unset;
+                            padding-left: 0px;
+                            align-items: center;
+                            justify-content: center;
+                            order: 2;
+                            .label {
+                                &::before {
+                                    color: @color-black;
+                                }
+                            }
+                            .control {
+                                padding: 0px;
+                            }
+                            .action {
+                                &.search {
+                                    height: 50px;
+                                    right: 20px;
+                                }
+                            }
+                            .form {
+                                &.minisearch {
+                                    .control {
+                                        input {
+                                            height: 50px;
+                                            border-radius: 30px;
+                                            padding: 0 25px;
+                                        }
+                                        .nested {
+                                            display: none;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        .minicart-wrapper {
+                            margin-top: 0px;
+                            .action {
+                                &.showcart{
+                                    &:before {
+                                        content: '';
+                                        height: 30px;
+                                        width: 30px;
+                                        background-position: center;
+                                        background-repeat: no-repeat;
+                                        background-size: contain;
+                                        background-image: url('@{baseDir}images/icons/shopping-cart.png');
+                                    }
+                                }
+                            }
+                            order: 3;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// @screen__s:   640px;
+.media-width(@extremum, @break) when (@extremum ='max') and (@break =@screen__s) {
+    .page-wrapper {}
+}
+
+// @screen__xs:  480px;
+.media-width(@extremum, @break) when (@extremum ='max') and (@break =@screen__xs) {
+    .page-wrapper {}
+}
+
+
+//
+// Desktop Only (style-l.css)
+// ---------------------------------------------
+
+// @screen__l:   1024px;
+.media-width(@extremum, @break) when (@extremum ='min') and (@break =@screen__l) {
+    .page-wrapper {}
+}
